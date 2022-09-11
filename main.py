@@ -3,7 +3,7 @@ import turtle as t
 import random
 
 tim = t.Turtle()
-tim.pensize(10)
+# tim.pensize(1)
 tim.speed("fastest")
 
 t.colormode(255)
@@ -16,44 +16,13 @@ def random_color():
     tim.pencolor(r, g, b)
 
 
-# coordinates = ["north", "east", "south", "west"]
-direction = [0, 90, 180, 270]
-
-#
-# def turn_north():
-#     while tim.heading() != 90:
-#         tim.lt(90)
-#
-#
-# def turn_east():
-#     while tim.heading() != 0:
-#         tim.lt(90)
-#
-#
-# def turn_south():
-#     while tim.heading() != 270:
-#         tim.lt(90)
-#
-#
-# def turn_west():
-#     while tim.heading() != 180:
-#         tim.lt(90)
-
-
-travel_distance = 20
-for _ in range(250):
-    # direction = random.choice(coordinates)
-    # if direction == "north":
-    #     turn_north()
-    # elif direction == "east":
-    #     turn_east()
-    # elif direction == "south":
-    #     turn_south()
-    # elif direction == "west":
-    #     turn_west()
-    tim.setheading(random.choice(direction))
+angle = 0
+step = 3
+for _ in range(0, 360, step):
     random_color()
-    tim.fd(travel_distance)
+    tim.circle(80)
+    angle += step
+    tim.setheading(angle)
 
 # Has to happen after all the code
 screen = t.Screen()
