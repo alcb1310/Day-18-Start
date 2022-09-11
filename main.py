@@ -1,19 +1,18 @@
 import turtle
-from turtle import Turtle, Screen
+import turtle as t
 import random
 
-tim = Turtle()
-screen = Screen()
+tim = t.Turtle()
 tim.pensize(10)
 tim.speed("fastest")
 
-screen.colormode(255)
+t.colormode(255)
 
 
-def select_color():
-    r = random.randint(0, 254)
-    g = random.randint(0, 254)
-    b = random.randint(0, 254)
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
     tim.pencolor(r, g, b)
 
 
@@ -53,8 +52,9 @@ for _ in range(250):
     # elif direction == "west":
     #     turn_west()
     tim.setheading(random.choice(direction))
-    select_color()
+    random_color()
     tim.fd(travel_distance)
 
 # Has to happen after all the code
+screen = t.Screen()
 screen.exitonclick()
